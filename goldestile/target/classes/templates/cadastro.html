@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type= "text/css" href="/style/style.css">
+    <title>Cadastro</title>
+</head>
+<body>
+<header>
+<h2>Cadastro</h2>
+<form th:action="@{/validarCadastro}" method="post" th:object="${cliente}" >
+    <input type="text" id="nome" th:field="*{nome}" name="nome" placeholder="Digite seu nome"><br>
+    <input type="email" id="email" th:field="*{email}" name="email" placeholder="Coloque seu e-mail"><br>
+    <input type="password" id="senha" th:field="*{senha}" name="senha" placeholder="Crie sua senha"><br>
+    <button type="submit">Cadastrar</button>
+</form>
+<a href="/index"><button>Voltar ao Inicio</button></a>
+</header>
+<footer>
+    <p>&copy; 2025 Golde Stile - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

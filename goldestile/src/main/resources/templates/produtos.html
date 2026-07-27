@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Produtos</title>
+</head>
+<body>
+<header>
+    <h1>Produtos</h1>
+</header>
+<h2>Camisas Disponíveis para Compra:</h2>
+<div class="container mt-5">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Quantidade</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="camisa : ${camisas}">
+            <td th:text="${camisa.nome}"></td>
+            <td th:text="${camisa.descricao}"></td>
+            <td th:text="${camisa.valor}"></td>
+            <td th:text="${camisa.quantidade}"></td>
+            <td><form th:action="@{/compraDeServicos/{id}(id=${camisa.ID})}" method="post" style="display:inline;">
+                <button class="btn-sucess" type="submit"  onclick=" alert('Compra realizada com sucesso! Entregaremos o pedido em até 14 dias');">Compra</button>
+            </form></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div style="text-align: center; margin: auto; margin-top: 5px;">
+    <a href="/index">
+        <button style="padding: 10px 20px; font-size: 16px;">Voltar ao Início</button>
+    </a>
+</div>
+<footer>
+    <p>&copy; 2025 Golde Stile - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

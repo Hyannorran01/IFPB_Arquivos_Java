@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type= "text/css" href="/style/style.css">
+    <title>Login</title>
+</head>
+<body>
+<header>
+    <h2>Efetue seu Login</h2>
+<form th:action="@{/autenticacao}" method="post" th:object="${admin}">
+    <label for="login-email">Email:</label>
+    <input type="text" id="login-email" th:field="*{email}" placeholder="Digite seu e-mail"><br>
+    <label for="login-senha">Senha:</label>
+    <input type="password" id="login-senha" th:field="*{senha}" placeholder="Digite sua senha"><br>
+    <button type="submit" onclick="alert('Login efetuado com sucesso!');">Entrar</button>
+</form>
+<a href="/cadastro"><button>Cadastre-se</button></a>
+</header>
+<footer>
+    <p>&copy; 2025 Golde Stile - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
