@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <html xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        .container { max-width: 800px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .detail-item { margin-bottom: 1em; }
+        .detail-item strong { display: block; color: #555; }
+        .btn { display: inline-block; padding: 10px 15px; margin-top: 20px; text-decoration: none; background-color: #007bff; color: white; border-radius: 5px; }
+        .btn:hover { background-color: #0056b3; }
+        .error { color: #d9534f; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:if="${aluno}">
+        <hr>
+        <div class="detail-item">
+            <strong>Nome:</strong>
+            <span th:text="${aluno.nome}">Teste De Nome</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Matricula</strong>
+            <span th:text="${aluno.matricula}">9506</span>
+        </div>
+
+        <div class="detail-item">
+            <strong>Idade:</strong>
+            <span th:text="${aluno.idade}">00</span>
+        </div>
+    </div>
+
+    <div th:if="${aluno == null}">
+        <h1 class="error">Aluno não encontrado!</h1>
+        <p>Tente Novamente.</p>
+    </div>
+
+    <a th:href="@{/}" class="btn">Voltar</a>
+</div>
+</body>
+</html>

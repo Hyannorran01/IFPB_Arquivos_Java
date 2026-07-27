@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <html xmlns:th="http://www.thymeleaf.org">
+    <style>
+        th{ background-color: silver;
+        padding-left: 20px;
+        padding-right: 20px;}
+    td{ border-style: solid;
+        border-color: #c3c3f0;}
+    h1{color: #0000ff;}
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<h1 class="mb-6">Lista de Turmas</h1>
+
+<a href="/turmas-cadastro.html" class="btn btn-primary mb-6">Nova Turma</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nome da Turma</th>
+        <th>ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${turma.nome}">NomeTurma</td>
+        <td th:text="${turma.id}">Identificador</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

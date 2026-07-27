@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula Thymeleaf</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Lista de Alunos</h1>
+
+    <a href="/cadastro-aluno" class="btn btn-primary mb-3">Novo Aluno</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.id}">1</td>
+            <td th:text="${aluno.nome}">Fulano</td>
+            <td th:text="${aluno.matricula}">fulano@email.com</td>
+            <td>
+                <a class="btn btn-info">
+                    Detalhes
+                </a>
+                <a  class="btn btn-warning">
+                    Editar
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
