@@ -1,0 +1,10 @@
+com\aula\h2_jdbc\repository\AlunoRepository.class
+com\aula\h2_jdbc\model\Turma.class
+com\aula\h2_jdbc\service\TurmaService.class
+com\aula\h2_jdbc\controller\TurmaController.class
+com\aula\h2_jdbc\service\AlunoService.class
+com\aula\h2_jdbc\model\Aluno.class
+com\aula\h2_jdbc\model\Endereco.class
+com\aula\h2_jdbc\controller\AlunoController.class
+com\aula\h2_jdbc\H2JdbcApplication.class
+com\aula\h2_jdbc\repository\TurmaRepository.class

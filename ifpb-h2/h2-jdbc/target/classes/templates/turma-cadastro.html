@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastrar Turma</title>
+</head>
+<body>
+<h1>Cadastro de Turma</h1>
+<form th:action="@{/turmas/salvar}" method="post" th:object="${turma}">
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}" required />
+
+    <button type="submit">Salvar</button>
+</form>
+<a th:href="@{/turmas}">Voltar</a>
+</body>
+</html>

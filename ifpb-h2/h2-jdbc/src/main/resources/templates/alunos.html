@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Lista de Alunos</title>
+</head>
+<body>
+<h1>Alunos Cadastrados</h1>
+<a th:href="@{/alunos/cadastro}">Novo Aluno</a>
+<table border="1">
+  <tr>
+    <th>ID</th><th>Nome</th><th>Turma ID</th><th>Ações</th>
+  </tr>
+  <tr th:each="aluno : ${alunos}">
+    <td th:text="${aluno.id}"></td>
+    <td th:text="${aluno.nome}"></td>
+    <td th:text="${aluno.turmaId}"></td>
+    <td>
+      <a th:href="@{'/alunos/' + ${aluno.id}}">Detalhes</a> |
+      <a th:href="@{'/alunos/editar/' + ${aluno.id}}">Editar</a> |
+      <a th:href="@{'/alunos/excluir/' + ${aluno.id}}"
+         onclick="return confirm('Deseja excluir?')">Excluir</a>
+    </td>
+  </tr>
+</table>
+<a th:href="@{/turmas}">Ver Turmas</a>
+</body>
+</html>

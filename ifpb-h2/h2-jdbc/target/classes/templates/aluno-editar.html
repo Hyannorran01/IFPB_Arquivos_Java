@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Aluno</title>
+</head>
+<body>
+<h1>Editar Aluno</h1>
+<form th:action="@{/alunos/atualizar}" method="post" th:object="${aluno}">
+    <input type="hidden" th:field="*{id}" />
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}" required />
+    <input type="text" th:field="*{matricula}" />
+
+<!--    <label>Turma:</label>-->
+<!--    <select th:field="*{turmaId}">-->
+<!--        <option th:each="turma : ${turmas}"-->
+<!--                th:value="${turma.id}"-->
+<!--                th:text="${turma.nome}"-->
+<!--                th:selected="${turma.id} == ${aluno.turmaId}"></option>-->
+<!--    </select>-->
+
+    <button type="submit">Atualizar</button>
+</form>
+<a th:href="@{/alunos}">Voltar</a>
+</body>
+</html>

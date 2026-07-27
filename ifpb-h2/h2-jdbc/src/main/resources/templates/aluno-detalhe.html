@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Detalhe do Aluno</title>
+</head>
+<body>
+<h1>Detalhes do Aluno</h1>
+<p><strong>ID:</strong> <span th:text="${aluno.id}"></span></p>
+<p><strong>Nome:</strong> <span th:text="${aluno.nome}"></span></p>
+<p><strong>Turma:</strong> <span th:text="${turma?.nome}">Sem turma</span></p>
+
+<a th:href="@{/}">Voltar</a>
+</body>
+</html>
